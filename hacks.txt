@@ -1,1 +1,2 @@
 ./alloydb-auth-proxy projects/on-prem-project-337210/locations/us-central1/clusters/allloydb-demo/instances/allloydb-demo --credentials-file ./alloydb-demo.json --port 5432 --address "0.0.0.0"
+ab -n 50000 -c 100 http://localhost:8081/
