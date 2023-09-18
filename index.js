@@ -10,7 +10,7 @@ const app = express();
 const initialBalanceUp = 50;
 
 // MongoDB Connection
-const url = 'mongodb://104.198.150.95:27017';
+const url = 'mongodb://x.x.x.x:27017';
 const client = new MongoClient(url);
 const dbNameMongo = 'alloydb_demo';
 const db = client.db(dbNameMongo);
@@ -18,7 +18,7 @@ const collection = db.collection('pnl');
 
 // Redis Connection
 const client_redis = createClient({
-  url: 'redis://104.198.150.95:6379',
+  url: 'redis://x.x.x.x:6379',
   scripts: {
     mincr: defineScript({
       NUMBER_OF_KEYS: 1,
@@ -35,7 +35,7 @@ const client_redis = createClient({
 
 // PostgreSQL Connection
 const client_pg = new pg.Client({
-  host: '192.168.96.2',
+  host: 'x.x.x.x',
   port: 5432,
   database: 'guestbook',
   user: 'postgres',
