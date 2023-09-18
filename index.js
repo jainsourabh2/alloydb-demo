@@ -10,7 +10,7 @@ const app = express();
 const initialBalanceUp = 50;
 
 // MongoDB Connection
-const url = 'mongodb://x.x.x.x:27017';
+const url = 'mongodb://104.198.150.95:27017';
 const client = new MongoClient(url);
 const dbNameMongo = 'alloydb_demo';
 const db = client.db(dbNameMongo);
@@ -18,7 +18,7 @@ const collection = db.collection('pnl');
 
 // Redis Connection
 const client_redis = createClient({
-  url: 'redis://x.x.x.x:6379',
+  url: 'redis://104.198.150.95:6379',
   scripts: {
     mincr: defineScript({
       NUMBER_OF_KEYS: 1,
@@ -35,11 +35,11 @@ const client_redis = createClient({
 
 // PostgreSQL Connection
 const client_pg = new pg.Client({
-  host: 'x.x.x.x',
+  host: '192.168.96.2',
   port: 5432,
   database: 'guestbook',
   user: 'postgres',
-  password: 'xxxxxxxx',
+  password: 'allloydb-demo',
 })
 
 
@@ -100,6 +100,7 @@ async function main() {
     let res = await client_pg.query("INSERT INTO pnl (cm_name, cm_net_amt,tm_name, tm_net_amt,dm_name, dm_net_amt,sm_name, sm_net_amt,m_name, m_net_amt,p_name, p_net_amt) values ('CM', " + val_cm_net_amt + " ,'TM', " + val_tm_net_amt + " ,'DM', " + val_dm_net_amt + " ,'SM', " + val_sm_net_amt + " ,'M', " + val_m_net_amt + " ,'P', " + random_int + ");")
     res = await client_pg.query("SELECT SUM(p_net_amt) FROM pnl;")
     console.log(`Added data to AlloyDB`);
+    console.log("--------*-----------*------------*----------*")
 
   return 'Done.';
 }
@@ -117,3 +118,4 @@ const server = app.listen(8081, function () {
    
    console.log("Example app listening at http://%s:%s", host, port)
 })
+
