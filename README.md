@@ -1,4 +1,4 @@
-1. Create a VM with MongoDB Community and Redis Community installed. Take a note of the private IP for the VM.<br>
+1. Create a VM with MongoDB Community and Redis Community installed. Take a note of the private IP for the VM.<br> . MongoDB can be installed from : https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 2. Create an Alloy DB instance by following the steps at https://cloud.google.com/alloydb/docs/instance-primary-create and note the primary IP for the VM.<br>
 3. Login into the PostgreSQL instance and create the database & table via the script at https://github.com/jainsourabh2/alloydb-demo/blob/main/database.sql<br>
 4. Login into the MongoDB Cluster and create the DB(alloydb_demo) and collection(alloydb_demo).<br>
