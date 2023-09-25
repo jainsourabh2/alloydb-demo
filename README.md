@@ -2,10 +2,10 @@
 - MongoDB can be installed from : https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-20-04 
 - Redis can be installed from : https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04
 2. Create an Alloy DB instance by following the steps at https://cloud.google.com/alloydb/docs/instance-primary-create and note the primary IP for the VM, username and password.<br>
-- Please enable the below 3 flags as well during the instance creation:
-google_columnar_engine.enable_auto_columnarization
-google_columnar_engine.enable_columnar_scan
-google_columnar_engine.enabled
+- Please enable the below 3 flags as well during the instance creation:<br> 
+google_columnar_engine.enable_auto_columnarization<br> 
+google_columnar_engine.enable_columnar_scan<br> 
+google_columnar_engine.enabled<br> 
 3. Login into the PostgreSQL instance and create the database & table via the script at https://github.com/jainsourabh2/alloydb-demo/blob/main/database.sql<br>
 4. Login into the MongoDB Cluster and create the DB(alloydb_demo) and collection(alloydb_demo).<br>
 5. Download the code on the VM for this repository.<br>
